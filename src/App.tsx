@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Flex, VStack, Heading, Text } from '@chakra-ui/react';
+import QrReader from 'react-qr-reader-es6';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [data, setData] = useState<any>('No result');
+
+	const handleError = () => {};
+
+	const handleScan = () => {};
+
+	return (
+		<Flex p={20}>
+			<VStack>
+				<Heading>QR-Reader</Heading>
+
+				<Text>{data}</Text>
+			</VStack>
+		</Flex>
+	);
 }
 
 export default App;
